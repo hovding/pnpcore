@@ -14,6 +14,10 @@ namespace Demo.AzureFunction
         {
             var config = builder.GetContext().Configuration;
             var azureFunctionSettings = new AzureFunctionSettings();
+            azureFunctionSettings.TenantId = "769c8c85-ac79-4d8b-b09c-e5d139b21580";
+            azureFunctionSettings.ClientId = "597f8a5b-f0a9-43fd-8727-d0ee3cbebf5e";
+            azureFunctionSettings.CertificateThumbprint = "B904DE61200496BAAB2B9A4F066873494EDFAC1C";
+            azureFunctionSettings.SiteUrl = "https://m5b3.sharepoint.com/sites/Dokstyring";
             config.Bind(azureFunctionSettings);
 
             builder.Services.AddPnPCore(options =>

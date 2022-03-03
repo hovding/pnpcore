@@ -16,10 +16,14 @@ if (-not ( Test-Path -Path $CertificateOutDir -PathType Container )) {
 	md $CertificateOutDir
 }
 
+Connect-Pnp
+
 $app = Register-PnPAzureADApp -ApplicationName $AzureADAppName -Tenant $Tenant -OutPath $CertificateOutDir `
 	-CertificatePassword (ConvertTo-SecureString -String $CertificatePassword -AsPlainText -Force) `
 	-Scopes "MSGraph.Group.ReadWrite.All","MSGraph.User.ReadWrite.All","SPO.Sites.FullControl.All","SPO.TermStore.ReadWrite.All","SPO.User.ReadWrite.All" `
 	-Store CurrentUser -DeviceLogin
+
+Connect-PnPOnline -Url "https://m5b3-admin.sharepoint.com" -Interactive
 
 $localSettings = Get-Content local.settings.sample.json | ConvertFrom-JSON
 $localSettings.Values.SiteUrl = $SiteUrl

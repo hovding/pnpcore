@@ -29,7 +29,7 @@ namespace Demo.AzureFunction
             {
                 log.LogInformation("Getting all the shared documents on site.");
 
-                IList sharedDocuments = await pnpContext.Web.Lists.GetByTitleAsync("Documents", l => l.RootFolder);
+                IList sharedDocuments = await pnpContext.Web.Lists.GetByServerRelativeUrlAsync("/sites/Dokstyring/ForenkletDokumenter", l => l.RootFolder);
                 var sharedDocumentsFolder = await sharedDocuments.RootFolder.GetAsync(f => f.Files);
 
                 var documents = (from d in sharedDocumentsFolder.Files.AsEnumerable()

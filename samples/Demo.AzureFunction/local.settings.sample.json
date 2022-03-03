@@ -4,9 +4,9 @@
     "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "dotnet",
 
-    "SiteUrl": "https://contoso.sharepoint.com/sites/pnpcoresdktestgroup",
-    "TenantId": "[TENANT ID]",
-    "ClientId": "[CLIENT ID]",
+    "SiteUrl": "https://m5b3.sharepoint.com/sites/Dokstyring",
+    "TenantId": "769c8c85-ac79-4d8b-b09c-e5d139b21580",
+    "ClientId": "9dc4859c-ce60-4e7e-8865-f26bf8424c53",
     "CertificateThumbPrint": "[CERTIFICATE THUMBPRINT]",
     "WEBSITE_LOAD_CERTIFICATES": "[CERTIFICATE THUMBPRINT]"
   }
